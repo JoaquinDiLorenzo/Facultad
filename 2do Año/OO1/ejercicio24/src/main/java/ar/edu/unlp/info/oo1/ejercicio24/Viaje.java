@@ -33,8 +33,12 @@ public class Viaje {
 		return diasDif>=2 && this.hayCapacidad();
 	}
 	
-	public void agregarPasajero(Usuario pasajero) {
-		if (this.sePuedeRealizar(LocalDate.now())) pasajeros.add(pasajero);
+	public boolean agregarPasajero(Usuario pasajero) {
+		if (this.sePuedeRealizar(LocalDate.now())) {
+			pasajeros.add(pasajero);
+			return true;
+		}
+		return false;
 	}
 	
 	public void procesarViaje() {

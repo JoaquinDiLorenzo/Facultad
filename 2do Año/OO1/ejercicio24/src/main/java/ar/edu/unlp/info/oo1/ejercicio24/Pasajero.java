@@ -14,7 +14,14 @@ public class Pasajero extends Usuario{
 	}
 	
 	public void registrarseAViaje(Viaje viaje) {
-		if (super.getSaldo() > 0) viaje.agregarPasajero(this); 
+		if ((super.getSaldo() > 0) && (viaje.agregarPasajero(this))) {
+			viaje.agregarPasajero(this);
+			viajesRealizados.add(viaje);
+		}
+	}
+	
+	public int cantViajesRealizados() { //Metodo para Test
+		return viajesRealizados.size();
 	}
 	
 	public double getBonificacion() {
