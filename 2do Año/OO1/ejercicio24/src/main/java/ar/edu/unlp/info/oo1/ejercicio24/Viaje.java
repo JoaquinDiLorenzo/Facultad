@@ -41,6 +41,7 @@ public class Viaje {
 		return false;
 	}
 	
+	
 	public void procesarViaje() {
 		double costoPorIntegrante = costoTotal / pasajeros.size();
 		pasajeros.stream().forEach(p -> p.cobrarViaje(costoPorIntegrante));

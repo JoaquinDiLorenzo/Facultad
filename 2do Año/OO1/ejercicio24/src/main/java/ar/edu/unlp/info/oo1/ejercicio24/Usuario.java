@@ -18,7 +18,7 @@ public abstract class Usuario {
 	}
 	
 	public void cargarSaldo(double monto) {
-		this.saldo += monto + this.getComision(monto);
+		this.saldo += monto - this.getComision(monto);
 	}
 	
 	public abstract double getBonificacion();
